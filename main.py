@@ -53,16 +53,11 @@ while True:
     quadMama = int(input("Entre com o quadrante da mama afetado | 1 - 5 : "))
     radioterapia = int(input("Entre com o historico de radioterapia | 1 - 2 : "))
 
-    entry = np.array([idade, menopausa, tamTumor, linfonodos, penCaps, grauMalig, mama, quadMama, radioterapia]).reshape(-1,9)
+    dados = np.array([idade, menopausa, tamTumor, linfonodos, penCaps, grauMalig, mama, quadMama, radioterapia]).reshape(-1,9)
 
-    resposta_tree_predict = tree.predict(entry)
+    predicao = tree.predict(dados)
 
-    if resposta_tree_predict == 2:
+    if predicao == 2:
         print("Ha possibilidade da recorrencia do cancer de mama")
-    elif resposta_tree_predict == 1:
+    elif predicao == 1:
         print("Nao ha possibilidade da recorrencia do cancer de mama")
-
-# 3 3 7 1 1 3 1 2 1
-# 5 2 7 2 1 3 1 2 1
-
-
